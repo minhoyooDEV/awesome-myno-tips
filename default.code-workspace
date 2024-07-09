@@ -1,0 +1,23 @@
+{
+  "folders": [
+    {
+      "path": "apps/simple-tips-react"
+    },
+    {
+      "path": "apps/docs"
+    },
+    {
+      "path": "apps/web"
+    },
+    {
+      "name": "@root",
+      "path": "."
+    },
+  ],
+  "settings": {
+  },
+  "extensions": {
+    "recommendations": [
+    ]
+  }
+}
