@@ -18,6 +18,17 @@ import { Route as rootRoute } from './routes/__root'
 
 const AboutLazyImport = createFileRoute('/about')()
 const IndexLazyImport = createFileRoute('/')()
+const SendingEventsAfterPageRenderingUseStateLazyImport = createFileRoute(
+  '/sending-events-after-page-rendering/use-state',
+)()
+const SendingEventsAfterPageRenderingUseQuerySimpleLazyImport = createFileRoute(
+  '/sending-events-after-page-rendering/use-query-simple',
+)()
+const SendingEventsAfterPageRenderingUseQueryIsFetchingLazyImport =
+  createFileRoute('/sending-events-after-page-rendering/use-query-isFetching')()
+const SendingEventsAfterPageRenderingUseQueryFinalLazyImport = createFileRoute(
+  '/sending-events-after-page-rendering/use-query-final',
+)()
 
 // Create/Update Routes
 
@@ -30,6 +41,46 @@ const IndexLazyRoute = IndexLazyImport.update({
   path: '/',
   getParentRoute: () => rootRoute,
 } as any).lazy(() => import('./routes/index.lazy').then((d) => d.Route))
+
+const SendingEventsAfterPageRenderingUseStateLazyRoute =
+  SendingEventsAfterPageRenderingUseStateLazyImport.update({
+    path: '/sending-events-after-page-rendering/use-state',
+    getParentRoute: () => rootRoute,
+  } as any).lazy(() =>
+    import('./routes/sending-events-after-page-rendering/use-state.lazy').then(
+      (d) => d.Route,
+    ),
+  )
+
+const SendingEventsAfterPageRenderingUseQuerySimpleLazyRoute =
+  SendingEventsAfterPageRenderingUseQuerySimpleLazyImport.update({
+    path: '/sending-events-after-page-rendering/use-query-simple',
+    getParentRoute: () => rootRoute,
+  } as any).lazy(() =>
+    import(
+      './routes/sending-events-after-page-rendering/use-query-simple.lazy'
+    ).then((d) => d.Route),
+  )
+
+const SendingEventsAfterPageRenderingUseQueryIsFetchingLazyRoute =
+  SendingEventsAfterPageRenderingUseQueryIsFetchingLazyImport.update({
+    path: '/sending-events-after-page-rendering/use-query-isFetching',
+    getParentRoute: () => rootRoute,
+  } as any).lazy(() =>
+    import(
+      './routes/sending-events-after-page-rendering/use-query-isFetching.lazy'
+    ).then((d) => d.Route),
+  )
+
+const SendingEventsAfterPageRenderingUseQueryFinalLazyRoute =
+  SendingEventsAfterPageRenderingUseQueryFinalLazyImport.update({
+    path: '/sending-events-after-page-rendering/use-query-final',
+    getParentRoute: () => rootRoute,
+  } as any).lazy(() =>
+    import(
+      './routes/sending-events-after-page-rendering/use-query-final.lazy'
+    ).then((d) => d.Route),
+  )
 
 // Populate the FileRoutesByPath interface
 
@@ -49,6 +100,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutLazyImport
       parentRoute: typeof rootRoute
     }
+    '/sending-events-after-page-rendering/use-query-final': {
+      id: '/sending-events-after-page-rendering/use-query-final'
+      path: '/sending-events-after-page-rendering/use-query-final'
+      fullPath: '/sending-events-after-page-rendering/use-query-final'
+      preLoaderRoute: typeof SendingEventsAfterPageRenderingUseQueryFinalLazyImport
+      parentRoute: typeof rootRoute
+    }
+    '/sending-events-after-page-rendering/use-query-isFetching': {
+      id: '/sending-events-after-page-rendering/use-query-isFetching'
+      path: '/sending-events-after-page-rendering/use-query-isFetching'
+      fullPath: '/sending-events-after-page-rendering/use-query-isFetching'
+      preLoaderRoute: typeof SendingEventsAfterPageRenderingUseQueryIsFetchingLazyImport
+      parentRoute: typeof rootRoute
+    }
+    '/sending-events-after-page-rendering/use-query-simple': {
+      id: '/sending-events-after-page-rendering/use-query-simple'
+      path: '/sending-events-after-page-rendering/use-query-simple'
+      fullPath: '/sending-events-after-page-rendering/use-query-simple'
+      preLoaderRoute: typeof SendingEventsAfterPageRenderingUseQuerySimpleLazyImport
+      parentRoute: typeof rootRoute
+    }
+    '/sending-events-after-page-rendering/use-state': {
+      id: '/sending-events-after-page-rendering/use-state'
+      path: '/sending-events-after-page-rendering/use-state'
+      fullPath: '/sending-events-after-page-rendering/use-state'
+      preLoaderRoute: typeof SendingEventsAfterPageRenderingUseStateLazyImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -57,6 +136,10 @@ declare module '@tanstack/react-router' {
 export const routeTree = rootRoute.addChildren({
   IndexLazyRoute,
   AboutLazyRoute,
+  SendingEventsAfterPageRenderingUseQueryFinalLazyRoute,
+  SendingEventsAfterPageRenderingUseQueryIsFetchingLazyRoute,
+  SendingEventsAfterPageRenderingUseQuerySimpleLazyRoute,
+  SendingEventsAfterPageRenderingUseStateLazyRoute,
 })
 
 /* prettier-ignore-end */
@@ -68,7 +151,11 @@ export const routeTree = rootRoute.addChildren({
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/about"
+        "/about",
+        "/sending-events-after-page-rendering/use-query-final",
+        "/sending-events-after-page-rendering/use-query-isFetching",
+        "/sending-events-after-page-rendering/use-query-simple",
+        "/sending-events-after-page-rendering/use-state"
       ]
     },
     "/": {
@@ -76,6 +163,18 @@ export const routeTree = rootRoute.addChildren({
     },
     "/about": {
       "filePath": "about.lazy.tsx"
+    },
+    "/sending-events-after-page-rendering/use-query-final": {
+      "filePath": "sending-events-after-page-rendering/use-query-final.lazy.tsx"
+    },
+    "/sending-events-after-page-rendering/use-query-isFetching": {
+      "filePath": "sending-events-after-page-rendering/use-query-isFetching.lazy.tsx"
+    },
+    "/sending-events-after-page-rendering/use-query-simple": {
+      "filePath": "sending-events-after-page-rendering/use-query-simple.lazy.tsx"
+    },
+    "/sending-events-after-page-rendering/use-state": {
+      "filePath": "sending-events-after-page-rendering/use-state.lazy.tsx"
     }
   }
 }
