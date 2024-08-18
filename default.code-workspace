@@ -1,23 +1,24 @@
 {
   "folders": [
     {
-      "path": "apps/simple-tips-react"
+      "path": "apps/simple-tips-react",
     },
     {
-      "path": "apps/docs"
+      "path": "apps/ios-like-counter",
     },
     {
-      "path": "apps/web"
+      "path": "apps/docs",
+    },
+    {
+      "path": "apps/web",
     },
     {
       "name": "@root",
-      "path": "."
+      "path": ".",
     },
   ],
-  "settings": {
-  },
+  "settings": {},
   "extensions": {
-    "recommendations": [
-    ]
-  }
+    "recommendations": [],
+  },
 }

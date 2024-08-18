@@ -39,3 +39,4 @@ yarn-error.log*
 
 # VSCODE Extensions
 .history
+*storybook.log
