@@ -1,11 +1,11 @@
-# @myno/ios-like-counter
+# @myno/framer-counter
 
 This package provides a set of flexible and customizable countdown timer components for React applications.
 
 ## Installation
 
 ```bash
-npm install @myno/ios-like-counter
+npm install @myno/framer-counter
 ```
 
 ## Components
@@ -15,7 +15,7 @@ npm install @myno/ios-like-counter
 A counter that increments or decrements by a specified step at a given interval.
 
 ```jsx
-import { IncrementDecrementCounter } from '@myno/ios-like-counter';
+import { IncrementDecrementCounter } from '@myno/framer-counter';
 
 <IncrementDecrementCounter initialValue={0} step={1} interval={1000} />
 ```
@@ -30,7 +30,7 @@ Props:
 A countdown timer that shows the time remaining until a specified date.
 
 ```jsx
-import { DateCountdown } from '@myno/ios-like-counter';
+import { DateCountdown } from '@myno/framer-counter';
 
 <DateCountdown targetDate={new Date('2024-12-31')} />
 ```
@@ -43,7 +43,7 @@ Props:
 A D-day countdown that decrements daily.
 
 ```jsx
-import { DdayCountdown } from '@myno/ios-like-counter';
+import { DdayCountdown } from '@myno/framer-counter';
 
 <DdayCountdown dday={100} />
 ```

@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { useCoreTimer } from "./useCoreTimer";
-import { formatRemainingTime } from "./utils";
+import { padStartedRemainingTime } from "./utils";
 
 export const useDdayTimer = (targetDate: Date | number) => {
   const { currentTime } = useCoreTimer();
@@ -11,7 +11,7 @@ export const useDdayTimer = (targetDate: Date | number) => {
       : new Date(Date.now() + 1000 * 60 * 60 * 24 * (targetDate + 1)).getTime()
   );
 
-  const diffTime = targetTime.current - currentTime; // targetDate가 number인 경우 초 단위로 변환
+  const diffTime = targetTime.current - currentTime.getTime();
 
   if (diffTime <= 0) {
     // 목표 시간이 지나면 모두 0으로 설정
@@ -27,7 +27,7 @@ export const useDdayTimer = (targetDate: Date | number) => {
   }
 
   const { years, months, days, hours, minutes, seconds, dday } =
-    formatRemainingTime(diffTime);
+    padStartedRemainingTime(diffTime);
 
   return {
     years,

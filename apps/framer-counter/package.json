@@ -1,5 +1,5 @@
 {
-  "name": "@myno/ios-like-counter",
+  "name": "@myno/framer-counter",
   "version": "1.1.0",
   "description": "Flexible countdown timer components for React",
   "main": "dist/cjs/index.js",
@@ -30,7 +30,7 @@
     "react-dom": "^18.2.0"
   },
   "dependencies": {
-    "framer-motion": "^11.3.28"
+    "framer-motion": "^10.18.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
